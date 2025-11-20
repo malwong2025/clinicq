@@ -1,14 +1,5 @@
-from pydantic import BaseModel, EmailStr
+# backend/schemas/__init__.py
 
-class UserBase(BaseModel):
-    email: EmailStr
-    full_name: str
+from .users import User, UserCreate, UserBase
 
-class UserCreate(UserBase):
-    password: str
-
-class UserRead(UserBase):
-    id: int
-
-    class Config:
-        orm_mode = True
+__all__ = ["User", "UserCreate", "UserBase"]
